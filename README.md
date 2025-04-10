@@ -94,6 +94,7 @@ The ETL pipeline is defined using Apache Airflow, which orchestrates the followi
 4. Airflow DAG:
 
 - The pipeline is managed by Airflow, and tasks are scheduled to run daily. The DAG is defined with dependencies to ensure that data is fetched, transformed, and loaded correctly.
+  ![Image](https://github.com/user-attachments/assets/ad579e5a-2b53-45d2-9383-9855e7b488dc)
 
 ## Visualization
 Start Streamlit Dashboard: After the ETL process loads data into the PostgreSQL database, you can run the Streamlit dashboard to visualize the data:
