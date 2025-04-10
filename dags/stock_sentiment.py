@@ -13,8 +13,7 @@ import yfinance as yf
 # Define your PostgreSQL connection details
 POSTGRES_CONN_ID = "postgres_local"  # Use Airflow connection ID
 
-TWITTER_TOKEN='AAAAAAAAAAAAAAAAAAAAAPYE0gEAAAAA8H5yL644u34QDVfRYT5ZzU3Ftpk%3DeC0IHm7fJEXqAwNl0bKevfl7LOdcY1af5FTl4RgQ2COoSkFS1Q'
-NEWS_API_KEY = '810089da5bf549d2b2bc87f48e982868'
+NEWS_API_KEY = 'your_api'
 
 # Initialize VADER sentiment analyzer
 analyzer = SentimentIntensityAnalyzer()
