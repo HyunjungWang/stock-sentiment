@@ -24,17 +24,15 @@ This project involves multiple components that interact together:
 - ETL Pipeline with Apache Airflow: Airflow orchestrates the extraction, transformation, and loading (ETL) process, fetching news articles, performing sentiment analysis, and storing the results in the database.
 
 ## Technologies
-- NewsAPI: Used to fetch the latest news articles related to specific stocks.
+- **NewsAPI**: Used to fetch the latest news articles related to specific stocks.
 
-- Sentiment Analysis: Sentiment of articles is analyzed using the VADER sentiment analysis model.
+- **Sentiment Analysis**: Sentiment of articles is analyzed using the VADER sentiment analysis model.
 
-- Yahoo Finance API: Used to fetch stock market prices.
+- **PostgreSQL**: A relational database to store news sentiment and stock price data.
 
-- PostgreSQL: A relational database to store news sentiment and stock price data.
+- **Streamlit**: A Python framework for building interactive web dashboards.
 
-- Streamlit: A Python framework for building interactive web dashboards.
-
-- Apache Airflow: Used to automate the ETL pipeline that fetches, analyzes, and stores data.
+- **Apache Airflow**: Used to automate the ETL pipeline that fetches, analyzes, and stores data.
 
 - Python: Main programming language, with libraries including requests, psycopg2, matplotlib, pandas, streamlit, yfinance, and vaderSentiment.
 
@@ -74,10 +72,6 @@ Once you have the key, you need to set it as an environment variable or update t
 
 
 
-
-
-
-
 ## ETL
 The ETL pipeline is defined using Apache Airflow, which orchestrates the following tasks:
 
@@ -106,3 +100,49 @@ Start Streamlit Dashboard: After the ETL process loads data into the PostgreSQL 
 ```
 streamlit run sentiment_dashboard.py
 ```
+---
+![Image](https://github.com/user-attachments/assets/7582b029-44de-4bfe-937b-4e50324a2937)
+
+---
+### 1. Sentiment Pie Chart
+
+The **Sentiment Pie Chart** displays the sentiment distribution of news articles related to the selected stock ticker. It shows three types of sentiments:
+
+- **Positive**: Articles that express a positive outlook on the stock.
+- **Neutral**: Articles with a neutral sentiment, without a clear positive or negative bias.
+- **Negative**: Articles that express a negative view on the stock.
+
+#### How to interpret:
+- A larger segment in the pie chart indicates a dominant sentiment from the news articles, giving you an overall sense of how the news is affecting the stock sentiment.
+  
+For example, if the pie chart shows 60% positive sentiment, this means that 60% of the articles analyzed are positive about the stock.
+
+### 2. Stock Price Table
+
+The **Stock Price Table** shows the most recent stock prices, including the following data points:
+
+- **Date**: The date the stock data was recorded.
+- **Open**: The opening price of the stock for the day.
+- **High**: The highest price the stock reached during the day.
+- **Low**: The lowest price the stock reached during the day.
+- **Close**: The final price at which the stock closed for the day.
+
+#### How to interpret:
+- This table helps you track the stock's historical performance in terms of daily price movements.
+- You can analyze the daily volatility by looking at the difference between the `High` and `Low` prices, or see if the stock is generally trending upwards or downwards by comparing the `Open` and `Close` values.
+
+### 3. Stock Closing Price Line Chart
+
+The **Stock Closing Price Line Chart** visualizes the trend of the stock's **closing price** over time. It shows how the stock price has evolved over the past few days.
+
+#### How to interpret:
+- The line chart displays the stock's closing price for each trading day. You can visually analyze the trend (whether the stock price is increasing, decreasing, or staying stable).
+- The x-axis represents the **date**, and the y-axis represents the **closing price** of the stock on that date.
+- This chart is helpful in identifying patterns, such as upward or downward trends in the stock's performance, or to see how news and sentiment may have affected the price over time.
+
+---
+
+By using these visualizations together, you can gain insights into both the market sentiment (through the pie chart) and the stock's performance (through the table and line chart), which helps in making more informed decisions.
+
+
+
