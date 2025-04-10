@@ -2,7 +2,6 @@ from airflow import DAG
 from airflow.providers.postgres.operators.postgres import PostgresOperator
 from airflow.operators.python import PythonOperator
 from datetime import datetime, timedelta
-import tweepy
 import requests
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import psycopg2
